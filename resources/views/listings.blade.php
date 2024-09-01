@@ -1,5 +1,7 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
+@extends('layout')
+@section('content')
 {{-- @php --}}
 {{-- @endphp --}}
 
@@ -18,6 +20,7 @@
 <p class="text-red-400">no listings</p>
 @endif
 @foreach ($listings as $listing)
-<h3 class="text-green-500">{{$listing['title']}}</h3>
-<p>{{$listing['subtitle']}}</p>
+<a href="/listings/{{$listing['id']}}" class="text-green-500">{{$listing['title']}}</a>
+<p>{{$listing['description']}}</p>
 @endforeach
+@endsection
